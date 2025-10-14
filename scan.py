@@ -2,6 +2,37 @@ import requests
 import urllib.request
 from functools import partial
 import time
+from colorama import Fore, Style
+
+class Color:
+    BRIGHT_RED           = Style.BRIGHT + Fore.RED
+    BRIGHT_CYAN          = Style.BRIGHT + Fore.CYAN
+    BRIGHT_WHITE         = Style.BRIGHT + Fore.WHITE
+    BRIGHT_GREEN         = Style.BRIGHT + Fore.GREEN
+    BRIGHT_YELLOW        = Style.BRIGHT + Fore.YELLOW
+    BRIGHT_BLUE          = Style.BRIGHT + Fore.BLUE
+    BRIGHT_LIGHTWHITE_EX = Style.BRIGHT + Fore.LIGHTWHITE_EX
+
+def banners():
+    print()
+    print()
+    print(Color.BRIGHT_LIGHTWHITE_EX + "        ████████╗██╗  ██╗███████╗     ██████╗██╗   ██╗██████╗ ███████╗██████╗     ██╗    ██╗ █████╗ ████████╗ ██████╗██╗  ██╗███████╗██████╗ ███████╗")
+    print(Color.BRIGHT_LIGHTWHITE_EX + "        ╚══██╔══╝██║  ██║██╔════╝    ██╔════╝╚██╗ ██╔╝██╔══██╗██╔════╝██╔══██╗    ██║    ██║██╔══██╗╚══██╔══╝██╔════╝██║  ██║██╔════╝██╔══██╗██╔════╝")
+    print(Color.BRIGHT_LIGHTWHITE_EX + "           ██║   ███████║█████╗      ██║      ╚████╔╝ ██████╔╝█████╗  ██████╔╝    ██║ █╗ ██║███████║   ██║   ██║     ███████║█████╗  ██████╔╝███████╗")
+    print(Color.BRIGHT_LIGHTWHITE_EX + "           ██║   ██╔══██║██╔══╝      ██║       ╚██╔╝  ██╔══██╗██╔══╝  ██╔══██╗    ██║███╗██║██╔══██║   ██║   ██║     ██╔══██║██╔══╝  ██╔══██╗╚════██║")
+    print(Color.BRIGHT_LIGHTWHITE_EX + "           ██║   ██║  ██║███████╗    ╚██████╗   ██║   ██████╔╝███████╗██║  ██║    ╚███╔███╔╝██║  ██║   ██║   ╚██████╗██║  ██║███████╗██║  ██║███████║")
+    print(Color.BRIGHT_LIGHTWHITE_EX + "           ╚═╝   ╚═╝  ╚═╝╚══════╝     ╚═════╝   ╚═╝   ╚═════╝ ╚══════╝╚═╝  ╚═╝     ╚══╝╚══╝ ╚═╝  ╚═╝   ╚═╝    ╚═════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚══════╝")
+    print(Color.BRIGHT_LIGHTWHITE_EX + "                                    ╔══════════════════════════════════════════════════════════════════════════════════════╗")
+    print(Color.BRIGHT_LIGHTWHITE_EX + "                                    ║" + Color.BRIGHT_GREEN + "                                   HikVision CVE Scanner" +    Color.BRIGHT_LIGHTWHITE_EX + "                              ║")
+    print(Color.BRIGHT_LIGHTWHITE_EX + "                                    ║══════════════════════════════════════════════════════════════════════════════════════║")
+    print(Color.BRIGHT_LIGHTWHITE_EX + "                                    ║" + Color.BRIGHT_GREEN + "                                  " + Color.BRIGHT_LIGHTWHITE_EX + "     ║" + Color.BRIGHT_YELLOW + "                Version Affected:" + Color.BRIGHT_LIGHTWHITE_EX + "             ║")
+    print(Color.BRIGHT_LIGHTWHITE_EX + "                                    ║" + Color.BRIGHT_GREEN + "                Author:              " + Color.BRIGHT_LIGHTWHITE_EX + "  ║" + Color.BRIGHT_LIGHTWHITE_EX + "                                              ║")
+    print(Color.BRIGHT_LIGHTWHITE_EX + "                                    ║" + Color.BRIGHT_GREEN + "              Anonghost☠︎" + Color.BRIGHT_LIGHTWHITE_EX + "               ║" + Color.BRIGHT_YELLOW + "             HikVision 5.2.0 - 5.3.9" + Color.BRIGHT_LIGHTWHITE_EX + "          ║")
+    print(Color.BRIGHT_LIGHTWHITE_EX + "                                    ║" + Color.BRIGHT_GREEN + "              StucxTeam" + Color.BRIGHT_LIGHTWHITE_EX + "                ║" + Color.BRIGHT_YELLOW + " " + Color.BRIGHT_LIGHTWHITE_EX + "                                             ║")
+    print(Color.BRIGHT_LIGHTWHITE_EX + "                                    ║" + Color.BRIGHT_GREEN + "                             " + Color.BRIGHT_LIGHTWHITE_EX + "          ║" + Color.BRIGHT_YELLOW + " " + Color.BRIGHT_LIGHTWHITE_EX + "                                             ║")
+    print(Color.BRIGHT_LIGHTWHITE_EX + "                                    ╚══════════════════════════════════════════════════════════════════════════════════════╝\n")
+
+banners()
 
 # Set up urllib opener with headers
 opener = urllib.request.build_opener()
