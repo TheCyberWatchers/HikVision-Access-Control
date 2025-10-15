@@ -47,12 +47,12 @@ def check_camera(ip):
     try:
         response = requests.get(url, timeout=5)  # Added timeout for better handling
         if response.status_code == 404 or response.status_code == 401:
-            print(f'   [ * ] Server {ip} is not vulnerable! Status: {response.status_code}')
+            print(f'{Color.BRIGHT_RED}*{Color.BRIGHT_RED} Server{Color.BRIGHT_WHITE} {ip} {Color.BRIGHT_RED}is not vulnerable!{Color.BRIGHT_WHITE} Status:{Color.BRIGHT_RED} {response.status_code}{Style.RESET_ALL}')
         else:
-            print(f'\n   [ ! ] Server {ip} is vulnerable! Status: {response.status_code}\n')
-            print(f'See a live snapshot of the camera here: \n{url}\n')
+            print(f'{Color.BRIGHT_RED}!{Color.BRIGHT_GREEN} Server{Color.BRIGHT_WHITE} {ip}{Color.BRIGHT_GREEN} is vulnerable!{Color.BRIGHT_WHITE} Status:{Color.BRIGHT_GREEN} {response.status_code}{Style.RESET_ALL}')
+            print(f'{Color.BRIGHT_CYAN}See a live snapshot of the camera here: {Color.BRIGHT_WHITE}\n{url}\n')
     except requests.exceptions.RequestException as e:
-        print(f'   [ ~ ] Connection to {ip} failed! Error: {str(e)}')
+        print(f'   {Color.BRIGHT_YELLOW}~{Color.BRIGHT_RED} Connection to{Color.BRIGHT_WHITE} {ip}{Color.BRIGHT_RED} failed!{Style.RESET_ALL} Error:{Color.BRIGHT_RED} {str(e)}{Style.RESET_ALL}')
 
 # Read IPs from a text file
 def read_ips_from_file(file_path):
@@ -70,7 +70,7 @@ def read_ips_from_file(file_path):
 
 # Main execution
 if __name__ == "__main__":
-    file_path = input("Enter the path to the IP list file (e.g., ip_list.txt): ")
+    file_path = input("Enter the path to the IP list file: ")
     ip_list = read_ips_from_file(file_path)
     
     if not ip_list:
@@ -79,4 +79,4 @@ if __name__ == "__main__":
         print(f"Found {len(ip_list)} IP(s) to check.")
         for ip in ip_list:
             check_camera(ip)
-            time.sleep(1)  # Add a small delay between requests to avoid overwhelming servers
+            time.sleep(3)  # Add a small delay between requests to avoid overwhelming servers
